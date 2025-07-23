@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Full Stack Challenge
 
-## Getting Started
+This project is a full-stack web app using Next.js (frontend), NestJS (backend), and MongoDB (database). It demonstrates clean architecture, API integration, and modern UI with shadcn/ui.
 
-First, run the development server:
+## Features
+
+- Enter a website idea and generate 3 dummy sections (e.g., Hero, About, Contact)
+- Stores and fetches sections from MongoDB
+- Modern, beautiful UI using shadcn/ui
+- Loading and error handling
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd full-stack-challenge
+```
+
+### 2. Install dependencies (root and backend)
+
+```bash
+npm install
+cd backend
+npm install
+cd ..
+```
+
+### 3. Configure Environment Variables
+
+- In `backend/`, create a `.env` file:
+  ```
+  MONGODB_URI=mongodb+srv://Hussein-1:<db_password>@cluster0.kxhjw.mongodb.net/
+  ```
+  Replace `<db_password>` with your actual MongoDB password (no angle brackets).
+
+### 4. Start the Backend (NestJS)
+
+```bash
+cd backend
+npm run start:dev
+```
+
+- The backend will run on `http://localhost:3001` (or your configured port).
+
+### 5. Start the Frontend (Next.js)
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- The frontend will run on `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Notes
 
-## Learn More
+- Make sure your `.env` file is **never** committed to git (it is in `.gitignore` by default).
+- If you use a different MongoDB URI or port, update the code and `.env` accordingly.
+- To add more shadcn/ui components, run:
+  ```bash
+  npx shadcn@latest add <component>
+  ```
+- For deployment, set the same environment variables on your server or platform (e.g., Vercel, Heroku).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
